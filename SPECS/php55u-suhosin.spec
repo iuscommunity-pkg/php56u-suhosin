@@ -8,9 +8,6 @@ Release:        1.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
 License:        PHP
 URL:            http://www.hardened-php.net/suhosin/
-# git clone https://github.com/stefanesser/suhosin.git suhosin
-# cd suhosin && git checkout %%{checkout} && cd ../
-# tar czvf suhosin-%%{version}.tgz ./suhosin/
 Source0:        http://download.suhosin.org/suhosin-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -19,9 +16,6 @@ BuildRequires:  %{php_base}-devel
 Requires:       php(zend-abi) = %{php_zend_api}
 Requires:       php(api) = %{php_core_api}
 Requires:       %{php_base}
-
-# FIX ME: This should be removed before/after RHEL 5.6 is out
-# See: https://bugs.launchpad.net/ius/+bug/691755
 
 
 %description
@@ -39,8 +33,6 @@ make %{?_smp_mflags}
 
 %install
 make install INSTALL_ROOT=$RPM_BUILD_ROOT
-
-# install configuration
 %{__mkdir} -p $RPM_BUILD_ROOT%{_sysconfdir}/php.d
 %{__cp} suhosin.ini $RPM_BUILD_ROOT%{_sysconfdir}/php.d/suhosin.ini
 
