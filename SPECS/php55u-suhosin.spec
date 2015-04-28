@@ -6,8 +6,6 @@ Name:          	%{php_base}-suhosin
 Version:        0.9.37.1
 Release:        1.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
-
-Group:          Development/Languages
 License:        PHP
 URL:            http://www.hardened-php.net/suhosin/
 # git clone https://github.com/stefanesser/suhosin.git suhosin
@@ -40,18 +38,14 @@ and the PHP core.
 make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
 make install INSTALL_ROOT=$RPM_BUILD_ROOT
 
 # install configuration
 %{__mkdir} -p $RPM_BUILD_ROOT%{_sysconfdir}/php.d
 %{__cp} suhosin.ini $RPM_BUILD_ROOT%{_sysconfdir}/php.d/suhosin.ini
 
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root,-)
 %doc Changelog 
 %doc CREDITS
 %config(noreplace) %{_sysconfdir}/php.d/suhosin.ini
