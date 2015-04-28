@@ -14,7 +14,6 @@ Provides:       %{real_name} = %{version}
 BuildRequires:  %{php_base}-devel
 Requires:       %{php_base}(zend-abi) = %{php_zend_api}
 Requires:       %{php_base}(api) = %{php_core_api}
-Requires:       %{php_base}
 
 
 %description
