@@ -2,7 +2,7 @@
 %define real_name php-suhosin
 
 
-Name:          	%{php_base}-suhosin
+Name:           %{php_base}-suhosin
 Version:        0.9.37.1
 Release:        1.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
