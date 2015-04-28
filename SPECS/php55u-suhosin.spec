@@ -1,14 +1,8 @@
-%global	checkout	1fba865ab73cc98a3109f88d85eb82c1bfc29b37
-
-%global php_apiver  %((echo 0; php -i 2>/dev/null | sed -n 's/^PHP API => //p') | tail -1)
-%global php_extdir  %(php-config --extension-dir 2>/dev/null || echo "undefined")
-%global php_version %(php-config --version 2>/dev/null || echo 0)
-
 %define php_base php54
 %define real_name php-suhosin
-%define name %{php_base}-suhosin
 
-Name:          	%{name} 
+
+Name:          	%{php_base}-suhosin
 Version:        0.9.37.1
 Release:        1.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
@@ -25,7 +19,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Provides:       %{real_name} = %{version}
 BuildRequires:  %{php_base}-devel
 Requires:       php(zend-abi) = %{php_zend_api}
-Requires:       php(api) = %{php_apiver}
+Requires:       php(api) = %{php_core_api}
 Requires:       %{php_base}
 
 # FIX ME: This should be removed before/after RHEL 5.6 is out
