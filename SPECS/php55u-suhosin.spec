@@ -38,8 +38,7 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
 
 
 %files
-%doc Changelog 
-%doc CREDITS
+%doc Changelog CREDITS
 %config(noreplace) %{_sysconfdir}/php.d/suhosin.ini
 %{php_extdir}/suhosin.so
 
