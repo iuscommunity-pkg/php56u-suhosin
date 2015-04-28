@@ -44,6 +44,10 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
 
 
 %changelog
+* Tue Apr 28 2015 Carl George <carl.george@rackspace.com> - 0.9.37.1-1.ius
+- Port from php54 to php55u series
+- Remove requirement on mod_php
+
 * Tue Feb 17 2015 Carl George <carl.george@rackspace.com> - 0.9.37.1-1.ius
 - Latest upstream
 
