@@ -10,7 +10,6 @@ License:        PHP
 URL:            http://www.hardened-php.net/suhosin/
 Source0:        http://download.suhosin.org/suhosin-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
 Provides:       %{real_name} = %{version}
 BuildRequires:  %{php_base}-devel
 Requires:       php(zend-abi) = %{php_zend_api}
@@ -23,13 +22,16 @@ Suhosin is an advanced protection system for PHP installations. It was designed
 to protect servers and users from known and unknown flaws in PHP applications 
 and the PHP core.  
 
+
 %prep
 %setup -q -n suhosin-%{version}
+
 
 %build
 %{_bindir}/phpize
 %configure
 make %{?_smp_mflags}
+
 
 %install
 make install INSTALL_ROOT=$RPM_BUILD_ROOT
@@ -42,6 +44,7 @@ make install INSTALL_ROOT=$RPM_BUILD_ROOT
 %doc CREDITS
 %config(noreplace) %{_sysconfdir}/php.d/suhosin.ini
 %{php_extdir}/suhosin.so
+
 
 %changelog
 * Tue Feb 17 2015 Carl George <carl.george@rackspace.com> - 0.9.37.1-1.ius
