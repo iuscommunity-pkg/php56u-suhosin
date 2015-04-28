@@ -34,8 +34,7 @@ make %{?_smp_mflags}
 
 %install
 make install INSTALL_ROOT=%{buildroot}
-%{__mkdir} -p %{buildroot}%{_sysconfdir}/php.d
-%{__cp} suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
+install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
 
 
 %files
