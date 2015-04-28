@@ -1,4 +1,4 @@
-%define php_base php54
+%define php_base php55u
 %define real_name php-suhosin
 
 
