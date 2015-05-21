@@ -3,7 +3,7 @@
 
 
 Name:           %{php_base}-suhosin
-Version:        0.9.37.1
+Version:        0.9.38
 Release:        1.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
 License:        PHP
@@ -43,6 +43,9 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
 
 
 %changelog
+* Thu May 21 2015 Ben Harper <ben.harper@rackspace.com> -  0.9.38-1.ius
+- Latest upstream
+
 * Tue Apr 28 2015 Carl George <carl.george@rackspace.com> - 0.9.37.1-1.ius
 - Port from php54 to php55u series
 - Remove requirement on mod_php
