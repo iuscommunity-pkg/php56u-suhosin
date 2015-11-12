@@ -1,4 +1,4 @@
-%define php_base php55u
+%define php_base php56u
 %define real_name php-suhosin
 
 
@@ -43,6 +43,9 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
 
 
 %changelog
+* Thu Nov 12 2015 Carl George <carl.george@rackspace.com> - 0.9.38-1.ius
+- Port from php55u-suhosin
+
 * Thu May 21 2015 Ben Harper <ben.harper@rackspace.com> -  0.9.38-1.ius
 - Latest upstream
 
