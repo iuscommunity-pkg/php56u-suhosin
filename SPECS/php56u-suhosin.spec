@@ -33,18 +33,19 @@ make %{?_smp_mflags}
 
 %install
 make install INSTALL_ROOT=%{buildroot}
-install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/suhosin.ini
+install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/20-suhosin.ini
 
 
 %files
 %doc Changelog CREDITS
-%config(noreplace) %{_sysconfdir}/php.d/suhosin.ini
+%config(noreplace) %{_sysconfdir}/php.d/20-suhosin.ini
 %{php_extdir}/suhosin.so
 
 
 %changelog
 * Thu Nov 12 2015 Carl George <carl.george@rackspace.com> - 0.9.38-1.ius
 - Port from php55u-suhosin
+- Use 20- prefix for ini file
 
 * Thu May 21 2015 Ben Harper <ben.harper@rackspace.com> -  0.9.38-1.ius
 - Latest upstream
