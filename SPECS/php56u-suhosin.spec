@@ -16,9 +16,9 @@ Requires:       %{php_base}(api) = %{php_core_api}
 
 
 %description
-Suhosin is an advanced protection system for PHP installations. It was designed 
-to protect servers and users from known and unknown flaws in PHP applications 
-and the PHP core.  
+Suhosin is an advanced protection system for PHP installations. It was designed
+to protect servers and users from known and unknown flaws in PHP applications
+and the PHP core.
 
 
 %prep
