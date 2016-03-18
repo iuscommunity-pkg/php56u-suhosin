@@ -86,7 +86,7 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/40-suhosin.ini
   Obsoletes php53-suhosin
 - Rebuild against php53u-5.3.4
 
-* Mon Jul 27 2010 BJ Dierkes <wdierkes@rackspace.com> - 0.9.32.1-1
+* Tue Jul 27 2010 BJ Dierkes <wdierkes@rackspace.com> - 0.9.32.1-1
 - Latest sources from upstream
 - Built against php53-5.3.3
 
