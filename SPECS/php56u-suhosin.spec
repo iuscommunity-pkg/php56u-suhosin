@@ -1,5 +1,6 @@
 %define php_base php56u
 %define real_name php-suhosin
+%global ini_name 40-suhosin.ini
 
 
 Name:           %{php_base}-suhosin
@@ -45,12 +46,12 @@ make %{?_smp_mflags}
 
 %install
 make install INSTALL_ROOT=%{buildroot}
-install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/40-suhosin.ini
+install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/%{ini_name}
 
 
 %files
 %doc Changelog CREDITS
-%config(noreplace) %{_sysconfdir}/php.d/40-suhosin.ini
+%config(noreplace) %{_sysconfdir}/php.d/%{ini_name}
 %{php_extdir}/suhosin.so
 
 
