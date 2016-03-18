@@ -17,6 +17,9 @@ Requires:       %{php_base}(api) = %{php_core_api}
 Provides:       %{real_name} = %{version}
 Provides:       %{real_name}%{?_isa} = %{version}
 
+# conflict with the stock name
+Conflicts:      %{real_name} < %{version}
+
 
 %description
 Suhosin is an advanced protection system for PHP installations. It was designed
@@ -48,6 +51,7 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/40-suhosin.ini
 %changelog
 * Fri Mar 18 2016 Carl George <carl.george@rackspace.com> - 0.9.38-2.ius
 - Clean up provides
+- Conflict with stock name
 
 * Thu Nov 12 2015 Carl George <carl.george@rackspace.com> - 0.9.38-1.ius
 - Port from php55u-suhosin
