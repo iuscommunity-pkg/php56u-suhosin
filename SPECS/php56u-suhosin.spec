@@ -20,6 +20,12 @@ Provides:       %{real_name}%{?_isa} = %{version}
 # conflict with the stock name
 Conflicts:      %{real_name} < %{version}
 
+# RPM 4.8
+%{?filter_provides_in: %filter_provides_in %{php_extdir}/.*\.so$}
+%{?filter_setup}
+# RPM 4.9
+%global __provides_exclude_from %{?__provides_exclude_from:%__provides_exclude_from|}%{php_extdir}/.*\\.so$
+
 
 %description
 Suhosin is an advanced protection system for PHP installations. It was designed
@@ -52,6 +58,7 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/40-suhosin.ini
 * Fri Mar 18 2016 Carl George <carl.george@rackspace.com> - 0.9.38-2.ius
 - Clean up provides
 - Conflict with stock name
+- Filter provides
 
 * Thu Nov 12 2015 Carl George <carl.george@rackspace.com> - 0.9.38-1.ius
 - Port from php55u-suhosin
