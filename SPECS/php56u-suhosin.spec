@@ -4,15 +4,18 @@
 
 Name:           %{php_base}-suhosin
 Version:        0.9.38
-Release:        1.ius%{?dist}
+Release:        2.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
 License:        PHP
 URL:            https://suhosin.org/stories/
 Source0:        http://download.suhosin.org/suhosin-%{version}.tar.gz
-Provides:       %{real_name} = %{version}
 BuildRequires:  %{php_base}-devel
 Requires:       %{php_base}(zend-abi) = %{php_zend_api}
 Requires:       %{php_base}(api) = %{php_core_api}
+
+# provide the stock name
+Provides:       %{real_name} = %{version}
+Provides:       %{real_name}%{?_isa} = %{version}
 
 
 %description
@@ -43,6 +46,9 @@ install -Dm644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/40-suhosin.ini
 
 
 %changelog
+* Fri Mar 18 2016 Carl George <carl.george@rackspace.com> - 0.9.38-2.ius
+- Clean up provides
+
 * Thu Nov 12 2015 Carl George <carl.george@rackspace.com> - 0.9.38-1.ius
 - Port from php55u-suhosin
 - Use 40- prefix for ini file
