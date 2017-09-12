@@ -9,7 +9,7 @@ Release:        2.ius%{?dist}
 Summary:        Suhosin is an advanced protection system for PHP installations
 License:        PHP
 URL:            https://suhosin.org/stories/
-Source0:        http://download.suhosin.org/suhosin-%{version}.tar.gz
+Source0:        https://download.suhosin.org/suhosin-%{version}.tar.gz
 BuildRequires:  %{php_base}-devel
 Requires:       %{php_base}(zend-abi) = %{php_zend_api}
 Requires:       %{php_base}(api) = %{php_core_api}
